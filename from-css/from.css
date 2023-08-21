@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(31,30,30);
+    font-family: 'Roboto',sans-serif;
+    
+}
+form {
+    width: 30rem;
+    margin: 3rem auto;
+    background-color: rgb(255,255,255);
+    padding: 1rem;
+    border-radius: 6px;
+}
+label {
+    margin-bottom: 0.5rem;
+    display: block;/*레이블은 인라인블록 이라 블록으로 설정해야 마진이 된다*/
+}
+
+input {
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    box-sizing: border-box;/*양옆 간격 맞추기*/
+    font:inherit;/*부모의 폰트 설정을 가져온다*/
+    border: 1px solid rgb(184,184,184);
+    padding: 0.25rem;
+    color: rgb(61,58,58);
+}
+
+input:focus{ /*검색창을 누르면 효과가 나타남*/
+    background-color: rgb(219,190,253);
+    color:rgb(32,5,63) ;
+    border-color: rgb(32,5,63);
+}
+
+button {
+    display: block;
+    font: normal 1rem 'Roboto', sans-serif;/*폰트 사이즈 ,폰트종류 지정*/
+    background-color: rgb(32,5,63);
+    color: white;
+    border: 1px solid rgb(32,5,63);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer; /*커서가 버튼위에 올라가면 손가락 모양으로 바뀜*/
+}
+button:hover {
+    background-color: rgb(52,14,95);
+    border-color: rgb(52,14,95);
+}
+
+.form-control-inline {
+    display: flex; /*짝 맞춰서 한줄에 나열*/
+}
+.form-control-inline input {
+    width: auto;
+    margin-right: 0.5rem;
+}

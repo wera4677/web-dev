@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/from-css/from.css" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <form accept="/" method="GET">
+      <!--accept은 어디로 연결되야하는지 지정  method는 전송되어야하는 HTTP 종류선택 -->
+      <label for="username">Your name</label>
+      <input type="text" name="user-name" id="username" />
+      <!-- 인풋요소 생성 (검색창) -->
+      <label for="useremail">Your email address</label>
+      <!-- 레이블과 인풋을 연결 시켜야함 -->
+      <input type="email" name="user-email" id="useremail" />
+      <label for="userage">Your age</label>
+      <input type="number" name="user-age" id="userage" step="1" />
+      <!-- step은 증가 또는 감소 숫자 지정 -->
+      <label for="userpassword">Your password</label>
+      <input type="password" name="user-password" id="userpassword" />
+      <label for="birthdate">Your birthdate</label>
+      <input type="date" name="user-birthdate" id="birthdate" />
+      <hr />
+      <h2>How should we verify your account?</h2>
+      <div class="form-control-inline">
+        <input
+          type="radio"
+          name="verify"
+          id="verify-text-message"
+          value="text-message"
+        />
+        <label for="verify-text-message">Via text message (SMS)</label>
+      </div>
+      <div class="form-control-inline">
+        <input type="radio" name="verify" id="verify-phone" value="phone" />
+        <label for="verify-phone">Via a phone call</label>
+      </div>
+      <div class="form-control-inline">
+        <input type="radio" name="verify" id="verify-email" value="email" />
+        <label for="verify-email">Via an email</label>
+      </div>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
