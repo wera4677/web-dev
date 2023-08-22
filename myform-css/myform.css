@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(169, 241, 241);
+    font-family:'Roboto',sans-serif; ;
+}
+h1 {
+    text-align: center;
+    color: black;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+form {
+    background-color: azure;
+    width: 30rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 6px;
+}
+label {
+    margin: 0.5rem;
+    display: block;
+}
+input,textarea,select {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid rgb(157, 162, 172);
+    color: rgb(61,58,58);
+    padding: 0.5rem;
+}
+textarea {
+    resize: none;
+}
+input:focus,textarea:focus {
+    background-color: rgb(219,190,253);
+    color:rgb(32,5,63) ;
+    border-color: rgb(32,5,63);
+}
+button {
+    display: inline;
+    justify-content: space-between;
+    background-color: rgb(32,5,63);
+    color: white;
+    border: 1px solid rgb(32,5,63);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer; /*커서가 버튼위에 올라가면 손가락 모양으로 바뀜*/
+}
+.clear {
+    background-color: azure;
+    color: rgb(32,5,63);
+}
+button:hover {
+    background-color: rgb(52,14,95);
+    border-color: rgb(52,14,95);
+}
+.clear:hover {
+    background-color:rgb(157, 162, 172);
+}
+.radio-control {
+    display: flex;
+}
+.radio-control input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+.checkbox {
+    display: flex;
+}
+.checkbox input {
+    width: auto;
+    margin-right: 0.5rem;
+}

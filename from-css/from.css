@@ -3,6 +3,15 @@ body {
     font-family: 'Roboto',sans-serif;
     
 }
+h1 {
+    text-align: center;
+    color: white;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 form {
     width: 30rem;
     margin: 3rem auto;
@@ -15,7 +24,7 @@ label {
     display: block;/*레이블은 인라인블록 이라 블록으로 설정해야 마진이 된다*/
 }
 
-input {
+input, textarea ,select{
     width: 100%;
     display: block;
     margin-bottom: 1rem;
@@ -25,8 +34,13 @@ input {
     padding: 0.25rem;
     color: rgb(61,58,58);
 }
+textarea {
+    resize: none; /*텍스트 창 크기조절 금지시킨다*/
+    /* resize: vertical; 텍스트 창 크기를 위아래 로만 조절가능 */
+}
 
-input:focus{ /*검색창을 누르면 효과가 나타남*/
+input:focus,
+textarea:focus{ /*검색창을 누르면 효과가 나타남*/
     background-color: rgb(219,190,253);
     color:rgb(32,5,63) ;
     border-color: rgb(32,5,63);

@@ -13,41 +13,153 @@
     <title>HTML Forms</title>
   </head>
   <body>
-    <form accept="/" method="GET">
-      <!--accept은 어디로 연결되야하는지 지정  method는 전송되어야하는 HTTP 종류선택 -->
-      <label for="username">Your name</label>
-      <input type="text" name="user-name" id="username" />
-      <!-- 인풋요소 생성 (검색창) -->
-      <label for="useremail">Your email address</label>
-      <!-- 레이블과 인풋을 연결 시켜야함 -->
-      <input type="email" name="user-email" id="useremail" />
-      <label for="userage">Your age</label>
-      <input type="number" name="user-age" id="userage" step="1" />
-      <!-- step은 증가 또는 감소 숫자 지정 -->
-      <label for="userpassword">Your password</label>
-      <input type="password" name="user-password" id="userpassword" />
-      <label for="birthdate">Your birthdate</label>
-      <input type="date" name="user-birthdate" id="birthdate" />
-      <hr />
-      <h2>How should we verify your account?</h2>
-      <div class="form-control-inline">
-        <input
-          type="radio"
-          name="verify"
-          id="verify-text-message"
-          value="text-message"
-        />
-        <label for="verify-text-message">Via text message (SMS)</label>
-      </div>
-      <div class="form-control-inline">
-        <input type="radio" name="verify" id="verify-phone" value="phone" />
-        <label for="verify-phone">Via a phone call</label>
-      </div>
-      <div class="form-control-inline">
-        <input type="radio" name="verify" id="verify-email" value="email" />
-        <label for="verify-email">Via an email</label>
-      </div>
-      <button>Submit</button>
-    </form>
+    <header>
+      <h1>Demo Form</h1>
+    </header>
+    <main>
+      <!--accept은 어디로 연결되야하는지 지정  method는 전송되어야하는 HTTP 종류선택 novalidate은 양식이달라도 제출가능 ex)이메일 -->
+      <form accept="/" method="GET" >
+        <section>
+          <h2>Your personal details</h2>
+          <ul>
+            <li>
+              <label for="username">Your name</label>
+              <input type="text" name="user-name" id="username" required placeholder="name" />
+            </li>
+            <li>
+              <label for="useremail">Your email address</label
+              ><!-- 레이블과 인풋을 연결 시켜야함 -->
+              <input
+                type="email"
+                name="user-email"
+                id="useremail" required
+              /><!-- 인풋요소 생성 (검색창) -->
+            </li>
+            <li>
+              <label for="userpassword">Your password</label>
+              <input type="password" name="user-password" id="userpassword" required  minlength="7"/>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Moer details</h2>
+          <ul>
+            <li>
+              <label for="userage">Your age</label>
+              <input type="number" name="user-age" id="userage" step="1" required min="18" max="100" />
+              <!-- step은 증가 또는 감소 숫자 지정 -->
+            </li>
+            <li>
+              <label for="birthdate">Your birthdate</label>
+              <input type="date" name="user-birthdate" id="birthdate" required min="1921-01-01" max="2003-01-01" />
+            </li>
+            <li>
+              <label for="favorite-color">your favorite color?</label>
+              <select id="favorite-color" name="favorite-color">
+                <option value="blue">My favorite color is blue</option>
+                <option value="black">My favorite color is black</option>
+                <option value="red">My favorite color is red</option>
+              </select>
+              <!-- 라디오 요소 와 비슷한 기능 드랍다운  -->
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <label for="usermessage">your message</label>
+          <textarea name="user-message" id="usermessage" rows="8"></textarea>
+          <!-- 여러줄 텍스트 적을곳 만들때 사용 -->
+          <!-- rows=""는 열 설정  -->
+        </section>
+
+        <section>
+          <h2>How should we verify your account?</h2>
+          <ul>
+            <li class="form-control-inline">
+              <input
+                type="radio"
+                name="verify"
+                id="verify-text-message"
+                value="text-message"
+                required
+              />
+              <label for="verify-text-message">Via text message (SMS)</label>
+            </li>
+            <li class="form-control-inline">
+              <input
+                type="radio"
+                name="verify"
+                id="verify-phone"
+                value="phone"
+                required
+              />
+              <label for="verify-phone">Via a phone call</label>
+            </li>
+
+            <li class="form-control-inline">
+              <input
+                type="radio"
+                name="verify"
+                id="verify-email"
+                value="email"
+                required
+              />
+              <label for="verify-email">Via an email</label>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>How should we contact you?</h2>
+          <ul>
+            <li class="form-control-inline">
+              <input
+                type="checkbox"
+                name="contact"
+                id="contact-email"
+                value="email"
+              />
+              <label for="contact-email">Contact me via email</label>
+            </li>
+
+            <li class="form-control-inline">
+              <input
+                type="checkbox"
+                name="contact"
+                id="contact-phone"
+                value="phone"
+              />
+              <label for="contact-phone">Contact me via phone</label>
+            </li>
+          </ul>
+        </section>
+
+        <hr />
+        <section>
+          <div class="form-control-inline">
+            <input type="checkbox" name="terms" id="agree-terms" />
+            <label for="agree-terms">Agree to terms?</label>
+          </div>
+        </section>
+
+        <section>
+          <!-- <button type="reset">Clear</button> -->
+          <button type="submit">Submit</button>
+        </section>
+      </form>
+    </main>
   </body>
 </html>
+<!-- novalidate은 검증속성 해제 명령어 ex)이메일 형식이 잘못되었어도 제출가능 -->
+<!-- required은 해당되는 필드는 공백이면 안된다라는 명령어 -->
+<!-- minlength="7" 는 최소 글자가 7자 이상 이여야한다 라는 명령어 -->
+<!-- min="" or max="" 는 나이 같이 최소 몇살 ~최대 몇살 같이 제한할수있는 명령어 -->
+<!-- placeholder=""은 미리보기 기능 입력창에 텍스트를 띄울수있음(힌트기능)  -->
+<!-- value=""는 입력한 값을 데이터화 시킴 개발자가 쉽게 알아볼수있도록 설정 -->
+
+ 
+<!-- 라디오 옵션은 여러개중 1개만 선택 -->
+<!-- 체크박스의 옵션은 여러개 선택가능 -->
+<!-- 레이블과 인풋을 연결할려면 id와 for의 이름이 같아야한다 -->
+<!-- submit은 제출하다,reset은 초기화 -->
