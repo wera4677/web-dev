@@ -10,88 +10,89 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/myform-css/myform.css" />
-    <title>Form</title>
+    <title>Form Challenge</title>
   </head>
   <body>
     <header>
       <h1>Contact US</h1>
     </header>
     <main>
-      <form action="/" method="GET">
+      <form action="/myform-html/myform.html" method="GET">
         <section>
           <h2>How can we help you?</h2>
           <ul>
             <li>
               <label for="username">Your Name</label>
-              <input type="text" name="name" id="username" required />
+              <input type="text" name="username" id="username" required />
             </li>
             <li>
               <label for="useremail">Your E-Mail Address</label>
               <input type="email" name="email" id="useremail" required />
             </li>
             <li>
-              <label for="usernumber">Your Phone Number</label>
-              <input type="number" name="number" id="usernumber" />
+              <label for="phone">Your Phone Number</label>
+              <input type="tel" name="phone" id="phone" minlength="8" required />
+            </li>
+            <li>
+              <label for="usermessage">Your Message</label>
+              <textarea name="message" id="usermessage" rows="6" minlength="10" maxlength="200" required></textarea>
             </li>
           </ul>
         </section>
 
         <section>
-          <label for="usermessage">Your Message</label>
-          <textarea name="message" id="usermessage" rows="5"></textarea>
-        </section>
-
-        <section>
-          <label for="userfind">How did you find us?</label>
-          <select name="find" id="userfind">
-            <option value="web">Web Search</option>
+          <label for="channel">How did you find us?</label>
+          <select name="channel" id="channel" required>
+            <option value="search">Web Search</option>
+            <option value="word-of-mouth">Word-of-Mouth</option>
+            <option value="other">Other</option>
           </select>
         </section>
 
         <section>
           <h2>How should we reply</h2>
           <ul>
-            <li class="radio-control">
+            <li class="inline-control">
               <input
                 type="radio"
-                name="verify"
-                id="callme"
-                value="callme"
+                name="reply"
+                id="reply-phone"
+                value="phone"
                 required
               />
-              <label for="callme">Call me</label>
+              <label for="reply-phone">Call me</label>
             </li>
-            <li class="radio-control">
+            <li class="inline-control">
               <input
                 type="radio"
-                name="verify"
-                id="myemail"
-                value="myemail"
+                name="reply"
+                id="reply-email"
+                value="email"
                 required
               />
-              <label for="myemail">Send me an email</label>
+              <label for="reply-email">Send me an email</label>
             </li>
-            <li class="radio-control">
+            <li class="inline-control">
               <input
                 type="radio"
-                name="verify"
-                id="reply"
-                value="reply"
+                name="reply"
+                id="reply-none"
+                value="none"
                 required
               />
-              <label for="reply">Don't reply</label>
+              <label for="reply-none">Don't reply</label>
             </li>
           </ul>
         </section>
         <section>
-          <div class="checkbox">
-            <input type="checkbox" name="accept" id="accept" value="accept" />
-            <label for="accept">Accept Terms</label>
+          <div class="inline-control">
+            <input type="checkbox" name="accept-terms" id="accept-terms" />
+            <label for="accept-terms">Accept Terms</label>
           </div>
         </section>
-        <section>
-          <button type="reset" class="clear">Clear</button>
-          <button type="submit">Submit</button>
+        <section id="form-actions">
+          <button type="reset" class="but-empty">Clear</button>
+          <button type="submit" class="but-filled">Submit</button>
         </section>
       </form>
     </main>

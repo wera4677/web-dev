@@ -1,75 +1,87 @@
 body {
-    background-color: rgb(169, 241, 241);
-    font-family:'Roboto',sans-serif; ;
+  background-color: rgb(236, 252, 253);
+  font-family: "Roboto", sans-serif;
 }
 h1 {
-    text-align: center;
-    color: black;
+  text-align: center;
+  color: black;
+  margin: 2rem;
 }
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 form {
-    background-color: azure;
-    width: 30rem;
-    margin: 2rem auto;
-    padding: 1rem;
-    border-radius: 6px;
+  background-color: rgb(246, 250, 255);
+  width: 40rem;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgb(0, 0, 0, 0.2);
+}
+section {
+  margin: 1rem;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 label {
-    margin: 0.5rem;
-    display: block;
+  color: rgb(66, 76, 97);
+  display: block;
+  margin: 0.5rem 0;
 }
-input,textarea,select {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-    border: 1px solid rgb(157, 162, 172);
-    color: rgb(61,58,58);
-    padding: 0.5rem;
+input,
+textarea,
+select {
+  font: inherit;
+  padding: 0.5rem;
+  border: 1px solid rgb(152, 159, 184);
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 textarea {
     resize: none;
 }
 input:focus,textarea:focus {
-    background-color: rgb(219,190,253);
-    color:rgb(32,5,63) ;
-    border-color: rgb(32,5,63);
+    background-color: rgb(217,227,247);
 }
 button {
-    display: inline;
-    justify-content: space-between;
-    background-color: rgb(32,5,63);
-    color: white;
-    border: 1px solid rgb(32,5,63);
+    font: inherit;
+    border: 1px solid rgb(51,67,100);
     padding: 0.5rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer; /*커서가 버튼위에 올라가면 손가락 모양으로 바뀜*/
+    cursor: pointer;/*마우스가 버튼위에 올라갔을때 손가락모양으로 변환*/
 }
-.clear {
-    background-color: azure;
-    color: rgb(32,5,63);
+#form-actions {
+    text-align: right;
 }
-button:hover {
-    background-color: rgb(52,14,95);
-    border-color: rgb(52,14,95);
+.but-filled {
+    background-color: rgb(51,67,100);
+    color: white;
 }
-.clear:hover {
-    background-color:rgb(157, 162, 172);
+.but-empty {
+    background-color: transparent;/*배경이 없게하기*/
+    color: rgb(51,67,100);
 }
-.radio-control {
-    display: flex;
+.but-filled:hover {
+    background-color: rgb(69,89,129);
+    border-color: rgb(69,89,129);
 }
-.radio-control input {
+.but-empty:hover {
+    background-color: rgb(208,215,230);
+}
+
+.inline-control {
+    display: flex; /*라디오 옵션 정렬*/
+}
+.inline-control label {
+    margin: 0;
+    margin-left: 0.5rem;
+}
+.inline-control input {
     width: auto;
-    margin-right: 0.5rem;
-}
-.checkbox {
-    display: flex;
-}
-.checkbox input {
-    width: auto;
-    margin-right: 0.5rem;
 }
