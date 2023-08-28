@@ -7,22 +7,31 @@ const maxAllowedChars = productNameInputElement.maxLength;
 //입력 제한 숫자
 
 function update(event) {
-    const enteredText = event.target.value;//값 받기
-    const enteredTextLength = enteredText.length;//값의 길이 
+  const enteredText = event.target.value; //값 받기
+  const enteredTextLength = enteredText.length; //값의 길이
 
-    const remainingCharacters = maxAllowedChars - enteredTextLength;
-    //max(60)에서 빼기 값의 길이  
+  const remainingCharacters = maxAllowedChars - enteredTextLength;
+  //max(60)에서 빼기 값의 길이
 
-    
-    remainingCharsElement.textContent = remainingCharacters;
-    //브라우저에 표시된 값을 업데이트 
+  remainingCharsElement.textContent = remainingCharacters;
+  //브라우저에 표시된 값을 업데이트
+
+  if (remainingCharacters === 0) {
+    remainingCharsElement.classList.add("error");
+    productNameInputElement.classList.add("error");
+  } else if (remainingCharacters <= 10) {
+    remainingCharsElement.classList.add("warning");
+    productNameInputElement.classList.add("warning");
+    remainingCharsElement.classList.remove("error");
+    productNameInputElement.classList.remove("error");
+  } else {
+    remainingCharsElement.classList.remove("error", "warning");
+    productNameInputElement.classList.remove("error", "warning");
+  }
 }
 
-productNameInputElement.addEventListener("input",update);
-
-
+productNameInputElement.addEventListener("input", update);
 
 //const sapnElement =document.getElementById("remaining-chars");
-//sapnElement.classList.add("");//클래스 추가 삭제는 remove
+//sapnElement.classList.add("");//클래스 추가 / 삭제는 remove
 //sapnElement.className = "";//클래스 추가 (주의:기존에있던 클래스 날려버림)
-
