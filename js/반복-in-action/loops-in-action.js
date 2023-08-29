@@ -79,6 +79,7 @@ const rollsDiceButtonElement = document.querySelector("#statistics button");
 
 function rollDice() { //무작위 숫자코드를 명확하게 구분 하는 기능
     return Math.floor(Math.random() * 6) + 1;//Math.floor() = 내림 5.64 => 5
+    //Math.random() = 주사위 굴릴때마다 임의의 정수 제공
 }
 
 function deriveNumberOfdiceRolls () {//리스트 항목을 출력하는 기능
@@ -86,7 +87,7 @@ function deriveNumberOfdiceRolls () {//리스트 항목을 출력하는 기능
     const diceRollsListElement = document.getElementById("dice-rolls");
 
     const enteredNumber = targetNumberInputElement.value;//입력 한 값
-    diceRollsListElement.innerHTML = "";
+    diceRollsListElement.innerHTML = "";// 초기화 
 
     let hasRolledTargetNumber = false;
     let numberOfRolls =0;
