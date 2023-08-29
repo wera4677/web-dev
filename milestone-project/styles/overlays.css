@@ -1,0 +1,28 @@
+.modal {
+    position: fixed; /*위치고정 항상 같은위치로*/
+    top: 20%;
+    left: 5%;
+    width: 90%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /*그림자효과 x축, y축, 반경,색상*/
+    display: none; /*화면에서 숨기기*/
+}
+
+#backdrop {/*스타일 하기위한 html*/
+    position: fixed;/*위치고정*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: none; /*화면에서 숨기기*/
+}
+
+@media (min-width: 48rem) { /*모바일*/
+    .modal {
+        left: calc(50% - 20rem);/*차원을 계산할수 있게해주는 내장함수 (화면의 중간으로)*/
+        width: 40rem;
+    }
+}
