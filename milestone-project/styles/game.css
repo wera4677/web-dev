@@ -1,0 +1,59 @@
+#active-game {
+    text-align: center;
+    margin: 2rem 0 5rem 0; /*위 오른쪽 밑 왼쪽*/
+    display: none; /*숨기기*/
+}
+
+#game-over {
+    width: 90%;
+    max-width: 40rem; /*최대넓비 조절*/
+    margin: auto;
+    padding: 1rem 2rem;
+    background-color: rgb(50,5,87);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);/*그림자*/
+    border-radius: 4px;
+    display: none;/*숨기기*/
+}
+
+#game-over h2 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+#active-player-name {
+    font-weight: bold;
+    color: rgb(50,5,87);
+}
+
+#game-board {
+    list-style: none;/*목록 숫자 제거*/
+    margin: 1rem 0;
+    padding: 0;
+    display: grid; /*2차원 (그리드)*/
+    grid-template-columns: repeat(3, 6rem); /*너비가 6rem 짜리 3개의 열추가*/
+    grid-template-rows: repeat(3, 6rem);/*행의 높이 와 너비가 같게 6rem */
+    justify-content: center;/*그리드 설정한것 중심으로 오도록함*/
+    gap: 0.5rem;/*열과 행 사이에 0.5rem 만큼 공간 확보*/
+}
+
+#game-board li {
+    background-color: rgb(215,187,247);
+    border-radius: 2px;
+    cursor: pointer; /*마우스 커서가 닿으면 커서 효과 바뀜*/
+    display: flex;/*배치,정렬,분산*/
+    justify-content: center;/*중심에 배치*/
+    align-items: center;/*가로와 세로 중심에 배치*/
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#game-board li:hover {
+    background-color: rgb(112,13,204);
+}
+
+#game-board li.disabled {
+    background-color:rgb(112,13,204) ;
+    color: white;
+    cursor: default;/*커서 효과 사라짐*/
+}

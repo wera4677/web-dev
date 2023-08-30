@@ -21,6 +21,16 @@
     padding: 0.35rem;
 }
 
+.error label {
+    color: rgb(136,2,2);
+}
+
+.error input {
+    border-color: rgb(136,2,2);
+    color: rgb(136,2,2);
+    background-color: rgb(253,219,219);
+}
+
 #game-congiguration {
     width: 90%;
     max-width: 40rem; /*최대 넓이 제한*/
