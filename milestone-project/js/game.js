@@ -11,7 +11,7 @@ function resetGameStatus() { // 게임 시작 버튼을 누루면 초기화 시�
     for(let i = 0; i < 3; i++){//게임 데이터 항목 초기화
         for(let j = 0; j < 3; j++) {
             gameData[i][j] = 0; //[0][0] ~ [2][2]까지 0 으로 초기화
-            const gameBoardItemElement =  gameBoardElement.children[gameBoardIndex];
+            const gameBoardItemElement =  gameBoardElement.children[gameBoardIndex];//li 
             gameBoardElement.children[gameBoardIndex].textContent = "";
             gameBoardItemElement.classList.remove("disabled");
             gameBoardIndex++;

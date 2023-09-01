@@ -31,7 +31,7 @@ const gameAreaElement = document.getElementById("active-game");//게임 화면 �
 // const gameFieldElements = document.querySelectorAll("#game-board li");//ALL을 사용하여 모든 것을뜻함
 const gameBoardElement = document.getElementById("game-board");//ol 에 연결
 const activePlayerNameElement = document.getElementById("active-player-name"); //게임 플레이어 차례 스팬 연결
-const gameOverElement = document.getElementById("game-over");//게임오버 메세지
+const gameOverElement = document.getElementById("game-over");//게임끝 메세지
 
 
 const editPlayer1BtnElement = document.getElementById("edit-player-1-btn"); //플레이어 1 버튼 연결
