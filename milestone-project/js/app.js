@@ -10,6 +10,7 @@ const gameData = [
 let editedPlayer = 0; // 1 과 2 의 플레이어 구분하기위한 변수
 let activePlayer = 0; //players 의 배열에 연결하기위한 변수
 let currentRound = 1; //무승부 라운드
+let gameIsOver = false;
 
 const players = [ 
     {

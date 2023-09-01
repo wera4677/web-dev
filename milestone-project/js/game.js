@@ -2,6 +2,7 @@
 function resetGameStatus() { // 게임 시작 버튼을 누루면 초기화 시키기
     activePlayer = 0;
     currentRound = 1;
+    gameIsOver = false;
     gameOverElement.firstElementChild.innerHTML = 
     'You won, <span id="winner-name">PLAYER NAME</span>!';
     gameOverElement.style.display = "none";//승리자 판결 메세지 숨김
@@ -43,7 +44,7 @@ function switchPlayer() {
 
 function selectGameField(event) {
   //몇번째 li인지 O,X 둘중 무엇인지 판단
-  if (event.target.tagName !== "LI") {
+  if (event.target.tagName !== "LI" || gameIsOver) {
     return;
   }
 
@@ -122,6 +123,7 @@ function checkForGameOver() {
 }
 
 function endGame(winnerId) {
+    gameIsOver = true;
   gameOverElement.style.display = "block";
 
   if (winnerId > 0) { //승자 판단 플레이어 1 또는 2
