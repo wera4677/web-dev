@@ -1,0 +1,16 @@
+#carousel-example {
+    width: 100%;
+    max-width: 50rem;
+    height: 30rem;
+    margin: 2rem auto;
+}
+
+#carousel-example img {
+    height: 30rem;
+    object-fit: cover;/*이미지 가로 세로 비율 유지하게끔 잘라줌*/
+}
+
+#newsletter-signup {
+    max-width: 30rem;
+    margin:  4rem auto;
+}
