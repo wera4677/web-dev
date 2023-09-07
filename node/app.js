@@ -12,6 +12,7 @@ app.use(express.urlencoded({
     extended: false, //경고를 받지않도록 명시적으로 설정
 })); //들어오는 모든 요청에 적용 /urlencoded 은 body 파서를 설정하는 메서드 (데이터 파서를 분석하여 자바스크립트객체로 변환)
 
+
 app.get("/currenttime",function(req, res) {
     res.send("<h1>" + new Date().toISOString() + "</h1>");   //익스프레스 에서 사용하는 응답 객체(send) /보내는 메서드
     
@@ -25,7 +26,7 @@ app.get("/" , function(req, res) { //if문을 쓰지 않고 별도의 경로를 
 app.post("/store-user", function(req, res) {
     const userName = req.body.username; // username 의 데이터 받기
    
-    const filePath = path.join(__dirname, "data", "users.json");  //절대 경로가 내장된변수(__dirname) 데이터 저장할곳 지정
+    const filePath = path.join(__dirname,"../data/users.json");  //절대 경로가 내장된변수(__dirname) 데이터 저장할곳 지정
 
     const fileData = fs.readFileSync(filePath); //파일을 먼저 읽는다 읽어야지 텍스트 파일로 저장가능
     const existingUsers = JSON.parse(fileData);   //텍스트 내용을 자바스크립트 객체 또는 배열로 변환
@@ -37,6 +38,24 @@ app.post("/store-user", function(req, res) {
     res.send("<h1>Username stored!</h1>"); //보내기
 
 }); //(경로지정, 함수)
+
+app.get("/users", function(req, res) {
+    const filePath = path.join(__dirname,"../data/users.json");  //절대 경로가 내장된변수(__dirname) 데이터 저장할곳 지정
+
+    const fileData = fs.readFileSync(filePath); //파일을 먼저 읽는다 읽어야지 텍스트 파일로 저장가능
+    const existingUsers = JSON.parse(fileData);   //텍스트 내용을 자바스크립트 객체 또는 배열로 변환
+
+    let responseData = "<ul>";
+
+    for (const user of existingUsers) { //배열을 통해 모든 사용자를 살펴보고 응답 데이터 업데이트
+        responseData += "<li>" + user + "</li>"; //새로운 문자열 추가
+    }
+
+    responseData += "</ul>";
+
+    res.send(existingUsers);
+
+}); //모든 사용자를 출력할수있는 경로 생성
 
 
 
