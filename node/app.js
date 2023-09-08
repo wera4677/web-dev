@@ -53,7 +53,7 @@ app.get("/users", function(req, res) {
 
     responseData += "</ul>";
 
-    res.send(existingUsers);
+    res.send(responseData);
 
 }); //모든 사용자를 출력할수있는 경로 생성
 
