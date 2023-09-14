@@ -5,10 +5,10 @@ const fs = require("fs");//파일시스템 노드js 내장 함수
 const path = require("path");   //제이슨 경로 구성할려면 노드에 내장된 핵심 패키지 필요
 
 const express = require("express"); //설치한 익스프레스 사용
-
 const app = express();
-//들어오는 요청에 어떤종류의 데이터가 있는지 확인한 다음 해당 데이터를 추출하는것 == 미들웨어 함수
-app.use(express.urlencoded({
+
+
+app.use(express.urlencoded({//들어오는 요청에 어떤종류의 데이터가 있는지 분석후에 변환해야 한다고 명시적으로 알림 == 미들웨어 함수
     extended: false, //경고를 받지않도록 명시적으로 설정
 })); //들어오는 모든 요청에 적용 /urlencoded 은 body 파서를 설정하는 메서드 (데이터 파서를 분석하여 자바스크립트객체로 변환)
 
@@ -19,7 +19,7 @@ app.get("/currenttime",function(req, res) {
 }); // (주소설정가능) localhost:3000/currenttime  매개변수(경로, 들어오는요청의대한 함수 )
 
 app.get("/" , function(req, res) { //if문을 쓰지 않고 별도의 경로를 만들어준다
-    res.send('<form action="/store-user" method="POST"><label>Your Name</label><input type="text" name="username"><button>Submit</button></form>');
+    res.send('<form action="/store-user" method="POST"><label>Your Name:</label><input type="text" name="username"><button>Submit</button></form>');
     //서버에 저장 할려면 method="POST" 사용
 });//localhost:3000/
 
