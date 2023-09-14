@@ -5,7 +5,7 @@ const fs = require("fs");//파일시스템 노드js 내장 함수
 const path = require("path");   //제이슨 경로 구성할려면 노드에 내장된 핵심 패키지 필요
 
 const express = require("express"); //설치한 익스프레스 사용
-const app = express();
+const app = express(); //exprss패키지는 node.js를 대신하는것이 아니라 향상시킨다
 
 
 app.use(express.urlencoded({//들어오는 요청에 어떤종류의 데이터가 있는지 분석후에 변환해야 한다고 명시적으로 알림 == 미들웨어 함수
