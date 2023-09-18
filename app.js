@@ -3,7 +3,11 @@ const fs =require("fs"); //파일을 열고 읽을려면 내장함수 fs 필요
 const path = require("path"); //내장된 경로 함수 (이걸 적용해야 경로 작성가능)
 
 const express = require("express"); //익스프레스 함수 불러오기
+
 const app =express(); //app  에 익스프레스 함수 설정 (서버열수있는 함수)
+
+app.set("views", path.join(__dirname,"views")); //ejs엔진을 사용하기전에 해야하는 설정 (처리하려는 템플릿 파일을 찾을 위치를 익스프레스에 알림)
+app.set("view engine","ejs"); //익스프레스 앱에 대한 특정 옵션을 설정가능
 
 app.use(express.static("public"));  //정적 파일 요청 또는 css나 자바스크립트 요청 할수있는지 확인하는 수신 에 대한 요청이 실행
 //미들웨어  .static <-정적  ("public") <-공용폴더
@@ -11,18 +15,21 @@ app.use(express.static("public"));  //정적 파일 요청 또는 css나 자바�
 app.use(express.urlencoded({extended: false})) //들어오는 데이터를 분석하고 변환 / extended: false ==> 경고를 받지않도록 명시적으로 설정
 
 app.get("/",function(req,res){
-    const htmlFilePath = path.join(__dirname, "views","index.html"); //경로 지정
-    res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
+    res.render("index"); //render() 은 응답 객체에서 사용되는 메서드이고, 템플릿을 전달하는 명령어 ejs ->HTML로 변환해서 브라우저에 전달
+    // const htmlFilePath = path.join(__dirname, "views","index.html"); //경로 지정
+    // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
 });
 
 app.get("/restaurants",function(req,res){
-    const htmlFilePath = path.join(__dirname, "views","restaurants.html"); //경로 지정
-    res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
+    res.render("restaurants");
+    // const htmlFilePath = path.join(__dirname, "views","restaurants.html"); //경로 지정
+    // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
 });
 
 app.get("/recommend",function(req,res){
-    const htmlFilePath = path.join(__dirname, "views","recommend.html"); //경로 지정
-    res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
+    res.render("recommend");
+    // const htmlFilePath = path.join(__dirname, "views","recommend.html"); //경로 지정
+    // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
 });
 
 app.post("/recommend",function(req,res){//사이트에서 데이터가 입력될때 (데이터)가져오기
@@ -40,13 +47,15 @@ app.post("/recommend",function(req,res){//사이트에서 데이터가 입력될
 }); 
 
 app.get("/confirm",function(req,res){
-    const htmlFilePath = path.join(__dirname, "views","confirm.html"); //경로 지정
-    res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
+    res.render("confirm");
+    // const htmlFilePath = path.join(__dirname, "views","confirm.html"); //경로 지정
+    // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
 });
 
 app.get("/about",function(req,res){
-    const htmlFilePath = path.join(__dirname, "views","about.html"); //경로 지정
-    res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
+    res.render("about");
+    // const htmlFilePath = path.join(__dirname, "views","about.html"); //경로 지정
+    // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
 });
 
 
