@@ -21,13 +21,19 @@ app.get("/",function(req,res){
 });
 
 app.get("/restaurants",function(req,res){
-    res.render("restaurants");
-    // const htmlFilePath = path.join(__dirname, "views","restaurants.html"); //경로 지정
-    // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
+    const filePath = path.join(__dirname,"data","restaurants.json");  //restaurants.json파일 연결
+   
+    const fileData = fs.readFileSync(filePath); //파일을 먼저 읽는다 읽어야지 텍스트 파일로 저장가능
+    const storedRestaurants = JSON.parse(fileData); //텍스트 내용을 자바스크립트 객체 또는 배열로 변환
+ 
+    res.render("restaurants",{numberOfRestaurants: storedRestaurants.length,
+    restaurants: storedRestaurants,
+    });//첫번째 매개값 = 경로 두번째 = 그경로안에 변수 (랜더링) == 서버에서 구문 분석되고 반환
+    //json파일 안에 있는 데이터갯수 를 파악
 });
 
 app.get("/recommend",function(req,res){
-    res.render("recommend");
+    res.render("recommend"); 
     // const htmlFilePath = path.join(__dirname, "views","recommend.html"); //경로 지정
     // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
 });

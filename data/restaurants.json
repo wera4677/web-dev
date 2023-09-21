@@ -5,5 +5,12 @@
     "cuisine": "C",
     "website": "https://mytest.com",
     "description": "E"
+  },
+  {
+    "name": "Restaurant 3",
+    "address": "Awesomestreet 5 ,Mycity",
+    "cuisine": "German",
+    "website": "https://awesome.com",
+    "description": "lt's amazing"
   }
 ]
