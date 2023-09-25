@@ -32,6 +32,15 @@ app.get("/restaurants",function(req,res){
     //json파일 안에 있는 데이터갯수 를 파악
 });
 
+app.get("/restaurants/:id",function (req, res){//동적 경로 정의  (도메인에 /restaurants/r1  입력하면 r1에 액세스 가능)
+     const restaurantId = req.params .id;       //도메인에 액세스 할수있는 키(params)
+    res.render("restaurant-detail",{ rid: restaurantId  }); //키를 정해서 id를 전달
+});
+
+
+
+
+
 app.get("/recommend",function(req,res){
     res.render("recommend"); 
     // const htmlFilePath = path.join(__dirname, "views","recommend.html"); //경로 지정
@@ -63,7 +72,6 @@ app.get("/about",function(req,res){
     // const htmlFilePath = path.join(__dirname, "views","about.html"); //경로 지정
     // res.sendFile(htmlFilePath); //html파일을 응답 으로 보낸다 sendFile()
 });
-
 
 
 app.listen(3000);  //포트번호 3000지정
