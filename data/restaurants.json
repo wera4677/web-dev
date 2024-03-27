@@ -1,16 +1,1 @@
-[
-  {
-    "name": "test",
-    "address": "test",
-    "cuisine": "C",
-    "website": "https://mytest.com",
-    "description": "E"
-  },
-  {
-    "name": "Restaurant 3",
-    "address": "Awesomestreet 5 ,Mycity",
-    "cuisine": "German",
-    "website": "https://awesome.com",
-    "description": "lt's amazing"
-  }
-]
+[{"id":"r1","name":"test","address":"test","cuisine":"C","website":"https://mytest.com","description":"E"},{"id":"r2","name":"Restaurant 3","address":"Awesomestreet 5 ,Mycity","cuisine":"German","website":"https://awesome.com","description":"lt's amazing"},{"name":"Munich Fines Restaurant","address":"Greatstreet 5, Munich","cuisine":"German","website":"https://munich-awesome.com","description":"lt's in munich","id":"b2acd8c7-4069-43af-9426-909fd8d85722"}]

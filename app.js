@@ -1,8 +1,7 @@
 const fs =require("fs"); //파일을 열고 읽을려면 내장함수 fs 필요
-
 const path = require("path"); //내장된 경로 함수 (이걸 적용해야 경로 작성가능)
-
 const express = require("express"); //익스프레스 함수 불러오기
+const uuid = require("uuid") // 객체를 얻는다
 
 const app =express(); //app  에 익스프레스 함수 설정 (서버열수있는 함수)
 
@@ -49,6 +48,9 @@ app.get("/recommend",function(req,res){
 
 app.post("/recommend",function(req,res){//사이트에서 데이터가 입력될때 (데이터)가져오기
    const restaurants = req.body;   //미들웨어(urlendoded)  추가해야지 데이터가 들어옴
+
+   restaurants.id = uuid.v4(); //uuid를 참조 하고  실제로 실행해야하는 v4() 메서드가 있다
+
    const filePath = path.join(__dirname,"data","restaurants.json");  //restaurants.json파일 연결
    
    const fileData = fs.readFileSync(filePath); //파일을 먼저 읽는다 읽어야지 텍스트 파일로 저장가능
